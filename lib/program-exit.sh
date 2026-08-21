@@ -4,6 +4,6 @@
 
 graceful_exit() {
     clear
-    echo "Tot ziens."
+    echo "Goodbye."
     exit 0
 }

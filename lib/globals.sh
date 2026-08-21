@@ -19,7 +19,7 @@ show_placeholder() {
     print_banner
     echo -e "${YELLOW}== $TITLE ==${NC}"
     echo
-    echo "Deze functie is nog niet gekoppeld — komt in een volgende stap."
+    echo "This feature isn't wired up yet - coming in a future step."
     echo
-    read -rp "Druk op Enter om terug te gaan naar het menu..." _
+    read -rp "Press Enter to return to the menu..." _
 }

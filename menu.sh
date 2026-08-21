@@ -30,19 +30,19 @@ main_menu() {
         echo
         echo
 
-        if ! read -rp "Keuze: " keuze; then
+        if ! read -rp "Choice: " choice; then
             echo
-            log_warning "Invoer gestopt, script wordt afgesloten."
+            log_warning "Input stopped, exiting."
             graceful_exit
         fi
 
-        case "$keuze" in
+        case "$choice" in
             1) show_placeholder "Scan" ;;
             2) show_placeholder "Help" ;;
             3) show_placeholder "About" ;;
             x|X) graceful_exit ;;
             *)
-                log_error "Ongeldige keuze: $keuze"
+                log_error "Invalid choice: $choice"
                 sleep 1
                 ;;
         esac
