@@ -1,41 +1,44 @@
 # Git Sync Checker
 
-A small homelab Bash tool that gives you a quick, read-only overview of the
-git status of your local repositories: uncommitted changes, and how far
-you're ahead/behind the remote — all from one menu, without touching
-your working directory.
+Een klein Bash-hulpmiddel voor thuisgebruik dat snel, read-only inzicht
+geeft in de git-status van je lokale repositories: niet-gecommitte
+wijzigingen, en hoeveel je voor-/achterloopt op de remote — allemaal
+vanuit één menu, zonder dat je werkmap wordt aangeraakt.
 
-> Status: work in progress. The menu shell below is built; the actual
-> scan logic is being redesigned (see Roadmap) and is not wired in yet.
+> Status: work in progress. Het menu-skelet hieronder staat; de
+> daadwerkelijke scan-logica wordt herontworpen (zie Roadmap) en is nog
+> niet gekoppeld.
 
-## Why
+## Waarom
 
-Originally a work script for checking a couple of hardcoded repositories
-before a GitLab sync. Rebuilt from scratch to be portable, menu-driven,
-and usable for any set of repositories on a home setup.
+Oorspronkelijk een werkscript om een paar hardcoded repositories te
+checken vóór een GitLab-sync. Van scratch herbouwd om overdraagbaar,
+menu-gestuurd en bruikbaar te zijn voor elke verzameling repositories in
+een thuisopstelling.
 
-## Requirements
+## Vereisten
 
-- **Windows**: [Git Bash](https://git-scm.com/downloads) (ships with Git for Windows)
+- **Windows**: [Git Bash](https://git-scm.com/downloads) (wordt
+  meegeleverd met Git for Windows)
 - **Linux/macOS**: Bash + `git`
 
-## Installation
+## Installatie
 
-Clone this repository one level *above* your projects folder, not inside
-it — the scan looks at your projects from a bird's-eye view rather than
-being one of the projects itself.
+Clone deze repository één niveau *boven* je projectmap, niet erin — de
+scan kijkt vanuit een helikopterview naar je projecten, in plaats van er
+zelf één van te zijn.
 
 ```bash
-# example layout:
-# ~/dev/git-sync-checker   <- this repo
-# ~/dev/my-project-a
-# ~/dev/my-project-b
+# voorbeeldstructuur:
+# ~/dev/git-sync-checker   <- deze repo
+# ~/dev/mijn-project-a
+# ~/dev/mijn-project-b
 
 cd ~/dev
 git clone git@github.com:calvinklemmer/git-sync-checker.git
 ```
 
-## Usage
+## Gebruik
 
 ```bash
 cd git-sync-checker
@@ -54,15 +57,15 @@ bash menu.sh
 x) Exit
 ```
 
-## Project structure
+## Projectstructuur
 
 ```
 git-sync-checker/
 ├── menu.sh              # entry point
 ├── lib/
-│   ├── colors.sh         # color definitions
+│   ├── colors.sh         # kleurdefinities
 │   ├── common.sh         # log_info / log_success / log_warning / log_error
-│   ├── globals.sh        # banner + placeholder screen
+│   ├── globals.sh        # banner + placeholder-scherm
 │   └── program-exit.sh   # graceful_exit
 ├── README.md
 └── LICENSE
@@ -70,15 +73,17 @@ git-sync-checker/
 
 ## Roadmap
 
-- [x] Menu shell with Scan / Help / About / Exit
-- [ ] Auto-discovery: scan the parent directory for git repositories
-      (no manual path config needed)
-- [ ] Ignore list (`.gitsyncignore`) to exclude specific folders from a scan
-- [ ] Read-only sync check: working tree status + ahead/behind vs. remote
-      (fetch only, no merge/pull — nothing gets changed automatically)
-- [ ] Real Help / About content
-- [ ] Basic tests
+- [x] Menu-skelet met Scan / Help / About / Exit
+- [ ] Auto-discovery: de bovenliggende map scannen op git-repositories
+      (geen handmatige padconfiguratie nodig)
+- [ ] Negeerlijst (`.gitsyncignore`) om specifieke mappen van een scan
+      uit te sluiten
+- [ ] Read-only sync-check: status van de werkmap + voor-/achterstand
+      t.o.v. de remote (alleen fetch, geen merge/pull — er wordt niets
+      automatisch gewijzigd)
+- [ ] Echte inhoud voor Help / About
+- [ ] Basistests
 
-## License
+## Licentie
 
-MIT — see [LICENSE](LICENSE).
+MIT — zie [LICENSE](LICENSE).

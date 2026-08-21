@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 #
 # lib/globals.sh
-# Banner en het "nog te bouwen"-scherm voor menu-items die nog niet aan
-# echte functionaliteit gekoppeld zijn.
+# Banner and the "not built yet" screen for menu items that aren't wired
+# to real functionality yet.
 
 print_banner() {
     clear

@@ -3,11 +3,11 @@
 # menu.sh
 # Git Sync Checker - menu (entry point)
 #
-# Dit is voorlopig een leeg skelet: de opties tonen alleen een placeholder.
-# De echte scan-logica (auto-discovery + negeerlijst) wordt in een latere
-# stap gekoppeld, in een eigen module.
+# This is a skeleton for now: the options only show a placeholder.
+# The actual scan logic (auto-discovery + ignore list) will be wired in
+# later, as its own module.
 #
-# Vereist: Git Bash (Windows) of Bash + git (Linux/macOS)
+# Requires: Git Bash (Windows) or Bash + git (Linux/macOS)
 
 set -uo pipefail
 

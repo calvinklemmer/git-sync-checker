@@ -6,8 +6,8 @@ Thumbs.db
 .vscode/
 .idea/
 
-# Logs / lokale output
+# Logs / local output
 *.log
 
-# Toekomstige persoonlijke config (nog niet in gebruik)
+# Future personal config (not in use yet)
 .gitsyncignore

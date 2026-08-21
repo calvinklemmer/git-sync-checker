@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 #
 # lib/common.sh
-# Gedeelde loginghelpers, gebruikt door menu.sh en (later) de scan-module.
-# Verwacht dat PROJECT_ROOT al gezet is en lib/colors.sh al gesourced is.
+# Shared logging helpers, used by menu.sh and (later) the scan module.
+# Expects PROJECT_ROOT to already be set and lib/colors.sh to already be sourced.
 
 log_info() {
     echo -e "${CYAN}[*]${NC} $1"
