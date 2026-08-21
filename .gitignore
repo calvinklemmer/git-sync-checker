@@ -1,0 +1,13 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/
+.idea/
+
+# Logs / lokale output
+*.log
+
+# Toekomstige persoonlijke config (nog niet in gebruik)
+.gitsyncignore
