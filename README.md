@@ -47,7 +47,7 @@ bash menu.sh
 
 ```
 ┌─────────────────────────────┐
-│      GIT SYNC CHECKER      │
+│      GIT SYNC CHECKER       │
 └─────────────────────────────┘
 
 1) Scan

@@ -39,7 +39,7 @@ main_menu() {
         case "$choice" in
             1) show_placeholder "Scan" ;;
             2) show_placeholder "Help" ;;
-            3) show_placeholder "About" ;;
+            3) show_about ;;
             x|X) graceful_exit ;;
             *)
                 log_error "Invalid choice: $choice"
