@@ -24,6 +24,20 @@ show_placeholder() {
     read -rp "Press Enter to return to the menu..." _
 }
 
+show_help() {
+    print_banner
+    echo "v$VERSION"
+    echo
+    echo -e "${GREEN}Help:${NC}"
+    echo "Scan  - read-only git status and sync overview of your repositories (not wired up yet)"
+    echo "Help  - this screen"
+    echo "About - version and license info"
+    echo "Exit  - quit the program"
+    echo
+    echo
+    read -rp "Press ENTER to return.." _
+}
+
 show_about() {
     print_banner
     echo "v$VERSION"

@@ -40,7 +40,7 @@ main_menu() {
 
         case "$choice" in
             1) show_placeholder "Scan" ;;
-            2) show_placeholder "Help" ;;
+            2) show_help ;;
             3) show_about ;;
             x|X) graceful_exit ;;
             *)
