@@ -22,6 +22,8 @@ source "$PROJECT_ROOT/lib/program-exit.sh"
 main_menu() {
     while true; do
         print_banner
+        echo
+        echo "Menu:"
         echo "1) Scan"
         echo "2) Help"
         echo "3) About"
