@@ -8,11 +8,9 @@ VERSION="0.1.0-dev"
 
 print_banner() {
     clear
-    echo -e "${CYAN}"
-    echo "┌─────────────────────────────┐"
-    echo "│      GIT SYNC CHECKER       │"
-    echo "└─────────────────────────────┘"
-    echo -e "${NC}"
+    echo -e "${CYAN}┌─────────────────────────────┐${NC}"
+    echo -e "${CYAN}│      GIT SYNC CHECKER       │${NC}"
+    echo -e "${CYAN}└─────────────────────────────┘${NC}"
 }
 
 # usage: show_placeholder "Scan"
@@ -28,7 +26,7 @@ show_placeholder() {
 
 show_about() {
     print_banner
-    echo "Version: v$VERSION"
+    echo "v$VERSION"
     echo
     echo -e "${CYAN}About${NC}"
     echo "Shows a quick, read-only overview of your local git repositories:"
