@@ -14,13 +14,14 @@ print_banner() {
 
 show_help() {
     print_banner
-    echo "v$VERSION"
     echo
-    echo -e "${GREEN}Help:${NC}"
-    echo "Scan  - read-only git status and sync overview of your repositories"
+    echo -e "${GREEN}Help${NC}"
+    echo "Quick reference for what each menu option does."
+    echo
+    echo "Scan  - scans the repositories next to this one and shows git status plus sync state (read-only)"
     echo "Help  - this screen"
     echo "About - version and license info"
-    echo "Exit  - quit the program"
+    echo "Exit  - quit the program nicely (or press Ctrl+C)"
     echo
     echo
     read -rp "Press ENTER to return.." _
@@ -28,11 +29,11 @@ show_help() {
 
 show_about() {
     print_banner
-    echo "v$VERSION"
-    echo
     echo -e "${GREEN}About${NC}"
     echo "Shows a quick, read-only overview of your local git repositories:"
     echo "uncommitted changes and how far you are ahead or behind the remote."
+    echo
+    echo "v$VERSION"
     echo
     echo
     read -rp "Press ENTER to return.." _
