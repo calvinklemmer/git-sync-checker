@@ -5,10 +5,6 @@ geeft in de git-status van je lokale repositories: niet-gecommitte
 wijzigingen, en hoeveel je voor-/achterloopt op de remote — allemaal
 vanuit één menu, zonder dat je werkmap wordt aangeraakt.
 
-> Status: work in progress. Het menu-skelet hieronder staat; de
-> daadwerkelijke scan-logica wordt herontworpen (zie Roadmap) en is nog
-> niet gekoppeld.
-
 ## Waarom
 
 Oorspronkelijk een werkscript om een paar hardcoded repositories te
@@ -50,12 +46,19 @@ bash menu.sh
 │      GIT SYNC CHECKER       │
 └─────────────────────────────┘
 
+Menu:
 1) Scan
 2) Help
 3) About
 
 x) Exit
 ```
+
+Scan loopt automatisch alle git-repositories af die direct onder die
+bovenliggende map staan (dus naast `git-sync-checker` zelf) en toont per
+repository: de status van de werkmap, en hoe ver je lokaal voor- of
+achterloopt op de remote. Er wordt niets gefetcht, gemerged, gepulld of
+gepusht — alleen gelezen.
 
 ## Projectstructuur
 
@@ -65,7 +68,8 @@ git-sync-checker/
 ├── lib/
 │   ├── colors.sh         # kleurdefinities
 │   ├── common.sh         # log_info / log_success / log_warning / log_error
-│   ├── globals.sh        # banner + placeholder-scherm
+│   ├── globals.sh        # banner + Help/About-schermen
+│   ├── scan.sh           # auto-discovery + read-only status-/sync-check
 │   └── program-exit.sh   # graceful_exit
 ├── README.md
 └── LICENSE
@@ -74,14 +78,14 @@ git-sync-checker/
 ## Roadmap
 
 - [x] Menu-skelet met Scan / Help / About / Exit
-- [ ] Auto-discovery: de bovenliggende map scannen op git-repositories
+- [x] Auto-discovery: de bovenliggende map scannen op git-repositories
       (geen handmatige padconfiguratie nodig)
+- [x] Read-only sync-check: status van de werkmap + voor-/achterstand
+      t.o.v. de remote, gebaseerd op lokaal bekende remote-info (geen
+      fetch, dus geen netwerkverkeer)
+- [x] Echte inhoud voor Help / About
 - [ ] Negeerlijst (`.gitsyncignore`) om specifieke mappen van een scan
       uit te sluiten
-- [ ] Read-only sync-check: status van de werkmap + voor-/achterstand
-      t.o.v. de remote (alleen fetch, geen merge/pull — er wordt niets
-      automatisch gewijzigd)
-- [ ] Echte inhoud voor Help / About
 - [ ] Basistests
 
 ## Licentie

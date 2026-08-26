@@ -17,6 +17,7 @@ PROJECT_ROOT="$SCRIPT_DIR"
 source "$PROJECT_ROOT/lib/colors.sh"
 source "$PROJECT_ROOT/lib/common.sh"
 source "$PROJECT_ROOT/lib/globals.sh"
+source "$PROJECT_ROOT/lib/scan.sh"
 source "$PROJECT_ROOT/lib/program-exit.sh"
 
 main_menu() {
@@ -39,7 +40,7 @@ main_menu() {
         fi
 
         case "$choice" in
-            1) show_placeholder "Scan" ;;
+            1) run_scan ;;
             2) show_help ;;
             3) show_about ;;
             x|X) graceful_exit ;;
