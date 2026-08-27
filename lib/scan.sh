@@ -85,6 +85,7 @@ run_scan() {
     local BASE
     BASE="$(dirname "$PROJECT_ROOT")"
 
+    clear
     echo
     echo "Scanning for git repositories in: $BASE"
     sleep 1
