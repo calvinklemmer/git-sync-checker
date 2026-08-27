@@ -15,6 +15,7 @@ check_repo() {
     echo -e "${CYAN}========================================${NC}"
     echo -e "${CYAN}$NAME${NC}"
     echo -e "${CYAN}========================================${NC}"
+    sleep 0.2
 
     cd "$REPO" || {
         echo -e "${RED}Cannot open directory: $REPO${NC}"
@@ -25,12 +26,14 @@ check_repo() {
     echo "== Project directory =="
     pwd
     echo
+    sleep 0.2
 
     echo "== Status =="
     git status
     git branch --show-current
     git remote -v 2>/dev/null || true
     echo
+    sleep 0.2
 
     echo "== File check =="
 
@@ -41,6 +44,7 @@ check_repo() {
 
     if [ -z "$UNSTAGED" ] && [ -z "$STAGED" ] && [ -z "$UNTRACKED" ]; then
         echo -e "${GREEN}Working tree clean.${NC}"
+        sleep 1
     else
         echo "Not yet committed:"
         {
@@ -50,6 +54,7 @@ check_repo() {
         } | sort -u | while read -r f; do
             echo -e "${RED}$f${NC}"
         done
+        sleep 0.2
     fi
 
     echo
@@ -71,6 +76,7 @@ check_repo() {
     else
         echo "No upstream set for the current branch."
     fi
+    sleep 0.2
 
     echo
 }
@@ -80,7 +86,8 @@ run_scan() {
     BASE="$(dirname "$PROJECT_ROOT")"
 
     echo
-    echo "== Git repositories under $BASE =="
+    echo "Scanning for git repositories in: $BASE"
+    sleep 1
 
     local FOUND=0
     for REPO in "$BASE"/*/; do
