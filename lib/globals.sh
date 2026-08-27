@@ -7,10 +7,18 @@ VERSION="0.1.0-dev"
 
 print_banner() {
     clear
-    echo -e "${GREEN}┌─────────────────────────────┐${NC}"
-    echo -e "${GREEN}│      GIT SYNC CHECKER       │${NC}"
-    echo -e "${GREEN}│                   v$VERSION │${NC}"
-    echo -e "${GREEN}└─────────────────────────────┘${NC}"
+    local title="GIT SYNC CHECKER"
+    local width=29
+    local pad_total=$(( width - ${#title} ))
+    local pad_left=$(( pad_total / 2 ))
+    local pad_right=$(( pad_total - pad_left ))
+    local version_string="v$VERSION"
+    local version_pad=$(( width - ${#version_string} - 1 ))
+
+    printf '%b┌%s┐\n' "$GREEN" "$(printf '─%.0s' $(seq 1 "$width"))"
+    printf '│%*s%s%*s│\n' "$pad_left" '' "$title" "$pad_right" ''
+    printf '│%*s%s │\n' "$version_pad" '' "$version_string"
+    printf '└%s┘%b\n' "$(printf '─%.0s' $(seq 1 "$width"))" "$NC"
 }
 
 show_help() {
