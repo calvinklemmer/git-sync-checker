@@ -95,7 +95,9 @@ run_scan() {
     fi
 
     cd "$PROJECT_ROOT"
+    echo
     echo -e "${CYAN}[i] All git repositories checked.${NC}"
+    echo
     echo
     read -rp "Press ENTER to return.." _
 }

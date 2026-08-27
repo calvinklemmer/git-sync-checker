@@ -30,6 +30,7 @@ show_help() {
 
 show_about() {
     print_banner
+    echo
     echo -e "${GREEN}About${NC}"
     echo "Shows a quick, read-only overview of your local git repositories:"
     echo "uncommitted changes and how far you are ahead or behind the remote."
